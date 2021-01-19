@@ -1,5 +1,5 @@
 import React from 'react';
-import './styles.css';
+import './style.css';
 import plus from '../../assets/plus.svg';
 
 const Header = () => {
