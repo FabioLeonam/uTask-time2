@@ -1,0 +1,47 @@
+.task{
+  background-color: #FDFDFD;
+  width: 408px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px;
+  border: 1px solid #DFDFDF;
+  border-radius: 4px;
+}
+
+.task p{
+  font-family: Roboto, sans-serif;
+  font-size: 16px;
+  line-height: 22.4px;
+  font-weight: 400;
+  color: #111111;
+}
+
+.buttons{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.buttons button{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border: 1px solid #DFDFDF;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.buttons .doneButton{
+  background: #E5FFFC;
+  margin-right: 5px;
+}
+
+.buttons .deleteButton{
+  background: none;
+  border: none;
+}
+
