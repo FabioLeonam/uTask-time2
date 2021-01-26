@@ -103,3 +103,7 @@
   margin-bottom: 22px;
 }
 
+.taskDone p{
+  text-decoration: line-through;
+  opacity: 0.5;
+}

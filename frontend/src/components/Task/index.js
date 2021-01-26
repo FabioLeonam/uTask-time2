@@ -5,8 +5,8 @@ import doneIcon from '../../assets/done.svg';
 import deleteIcon from '../../assets/deleteIcon.svg';
 
 
-const Task = ({id, inputText}) => {
-  
+const Task = ({id, inputText, status}) => {
+
   function handleDone(){
     api.put(`/tasks/${id}`, {taskStatus: true});
   }
@@ -16,16 +16,18 @@ const Task = ({id, inputText}) => {
   }
 
 
+
   return(
     <div className="task">
       <p>{inputText}</p>
       <div className ="buttons">
-        <button className="doneButton" onClick={handleDone}>
+        <button disabled={status} className="doneButton" onClick={handleDone}>
           <img src={doneIcon} alt="Tarefa feita"/>
         </button>
-        <button className="deleteButton" onClick={handleDelete}>
+        <button disabled={!status} className=" task deleteButton" onClick={handleDelete}>
           <img src={deleteIcon} alt="Tarefa feita" />
         </button>
+        
       </div>
       
     </div>
