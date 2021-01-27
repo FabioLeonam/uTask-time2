@@ -9,29 +9,28 @@ const Home = () => {
   const [tasks, setTasks] = useState([]);
 
   useEffect(() => {
-    getTasks()
-  }, [tasks])
-  
-  async function handleSubmit(event){
+    getTasks();
+  }, [tasks]);
+
+  async function handleSubmit(event) {
     event.preventDefault();
 
-    const inputText = event.target.querySelector('input');
-    if(inputText.value.trim() === '') return
+    const inputText = event.target.querySelector("input");
+    if (inputText.value.trim() === "") return;
 
     const data = {
       taskText: inputText.value,
-      taskStatus: 0
-    }
+      taskStatus: 0,
+    };
 
-    await api.post('tasks', data);
+    await api.post("tasks", data);
 
-    inputText.value = '';
+    inputText.value = "";
   }
 
-  async function getTasks(){
-    await api.get('tasks').then(res => setTasks(res.data));
+  async function getTasks() {
+    await api.get("tasks").then((res) => setTasks(res.data));
   }
-
 
   return (
     <>
@@ -53,48 +52,48 @@ const Home = () => {
       <div className="todo-container">
         <span className="titleBox">TODO</span>
         <div className="taskToDo">
-          
-          {tasks.filter(task => !task.taskStatus).length !== 0 ?
+          {tasks.filter((task) => !task.taskStatus).length !== 0 ? (
             tasks.map((task) => {
-              if(!task.taskStatus){
-                return(<Task 
-                  key={task._id}
-                  id={task._id}
-                  inputText={task.taskText}
-                  status={task.taskStatus} />)
+              if (!task.taskStatus) {
+                return (
+                  <Task
+                    key={task._id}
+                    id={task._id}
+                    inputText={task.taskText}
+                    status={task.taskStatus}
+                  />
+                );
               }
-            }) :
-              (
-                <div className="empty">
-                  <img src={beach} alt="Sem tarefas" />
-                  <span>Nada por aqui!</span>
-                </div>
-              )
-          
-          }
-        </div> 
-        
-        <span className="titleBox">DONE</span>
-        <div className="taskDone">
-        {tasks.filter(task => task.taskStatus).length !== 0 ?
-            tasks.map((task) => {
-              if(task.taskStatus){
-                return(<Task
-                  key={task._id}
-                  id={task._id}
-                  inputText={task.taskText}
-                  status={task.taskStatus} />
-                )
-              }
-            }) :
-            (
-              <div className="empty">
+            })
+          ) : (
+            <div className="empty">
               <img src={beach} alt="Sem tarefas" />
               <span>Nada por aqui!</span>
-              </div>
-            )
-          
-          }
+            </div>
+          )}
+        </div>
+
+        <span className="titleBox">DONE</span>
+        <div className="taskDone">
+          {tasks.filter((task) => task.taskStatus).length !== 0 ? (
+            tasks.map((task) => {
+              if (task.taskStatus) {
+                return (
+                  <Task
+                    key={task._id}
+                    id={task._id}
+                    inputText={task.taskText}
+                    status={task.taskStatus}
+                  />
+                );
+              }
+            })
+          ) : (
+            <div className="empty">
+              <img src={beach} alt="Sem tarefas" />
+              <span>Nada por aqui!</span>
+            </div>
+          )}
         </div>
       </div>
     </>

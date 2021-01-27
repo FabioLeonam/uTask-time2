@@ -1,17 +1,17 @@
-.task{
-  background-color: #FDFDFD;
+.task {
+  background-color: #fdfdfd;
   width: 408px;
   height: 45px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 14px 14px 14px 16px;
-  border: 1px solid #DFDFDF;
+  border: 1px solid #dfdfdf;
   border-radius: 4px;
   margin-bottom: 3px;
 }
 
-.task p{
+.task p {
   font-family: Roboto, sans-serif;
   white-space: pre-line;
   font-size: 16px;
@@ -20,43 +20,42 @@
   color: #111111;
 }
 
-.buttons{
+.buttons {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-.buttons button{
+.buttons button {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 30px;
   height: 30px;
-  border: 1px solid #DFDFDF;
+  border: 1px solid #dfdfdf;
   border-radius: 50%;
   cursor: pointer;
 }
 
-.buttons .doneButton{
-  background: #E5FFFC;
+.buttons .doneButton {
+  background: #e5fffc;
   margin-right: 5px;
 }
 
-.doneButton:disabled{
+.doneButton:disabled {
   display: none;
 }
 
-.buttons .deleteButton{
+.buttons .deleteButton {
   background: none;
   border: none;
 }
 
-.deleteButton:enabled{
-  background: #FFE5E6;
+.deleteButton:enabled {
+  background: #ffe5e6;
 }
 
-.deleteButton:disabled{
+.deleteButton:disabled {
   opacity: 0.3;
   cursor: initial;
 }
-
