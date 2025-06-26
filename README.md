@@ -62,7 +62,7 @@ Antes de começar, você vai precisar ter instalado em sua máquina:
 ### **1. Clone o Repositório**
 
 ```bash
-git clone https://github.com/FabioLeonam/uTask-time2
+git clone https://github.com/FabioLeonam/uTask-time2.git
 cd uTask-time2
 ```
 
